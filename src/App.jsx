@@ -88,7 +88,7 @@ function App() {
 
   return (
     <div>
-      <h2>Upload Your Data File Here .csv or .json</h2>
+      <h2 className='text-3xl font-bold underline'>Upload Your Data File Here .csv or .json</h2>
       <input type="file" accept=".csv,.json" onChange={handleFileUpload} />
       <div>
         <select onChange={(e) => setAllFilters({ ...allFilters, category: e.target.value })}>
