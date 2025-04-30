@@ -87,6 +87,18 @@ function App() {
     setFilteredData(data);
   }, [allFilters, sortingBy, sortingOrder, extractedData]);
 
+  const onClearData = () => {
+    localStorage.removeItem("data_set");
+    setExtractedData([]);
+    setFilteredData([]);
+    setAllFilters({
+      category: "",
+      brand: "",
+      discounted: "",
+    });
+    setSortingBy("");
+  }
+
   return (
     <div>
       {extractedData.length === 0 ? (
@@ -201,6 +213,7 @@ function App() {
                   Order {sortingOrder}
                 </span>
               </label>
+              <button onClick={onClearData} className="p-2 bg-white rounded-full text-red-400 hover:text-gray-500 dark:bg-gray-800 dark:text-gray-300 dark:hover:text-gray-200">Clear </button>
             </div>
           </div>
 
